@@ -77,5 +77,4 @@ jobs:
       run: |-
         ./kustomize edit set image hello-world=gcr.io/$PROJECT_ID/$IMAGE
         ./kustomize build . | kubectl apply -f -
-        kubectl rollout status deployment/$DEPLOYMENT_NAME
-        kubectl get services -o wide
+        

@@ -4,7 +4,7 @@ metadata:
   name: arbitrary
 
 commonLabels:
-  app: hello_world
+  app: hello-world
 
 resources:
 - deployment.yaml

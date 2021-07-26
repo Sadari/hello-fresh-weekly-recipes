@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      deployment: hello
+  template:
+    metadata:
+      labels:
+        deployment: hello
+    spec:
+      containers:
+      - name: the-container
+        image: gcr.io/omega-research-321011/hello_world
+        

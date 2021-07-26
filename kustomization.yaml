@@ -9,3 +9,8 @@ commonLabels:
 resources:
 - deployment.yaml
 
+images:
+- name: gcr.io/$PROJECT_ID/$IMAGE
+  newName: gcr.io/$PROJECT_ID/$IMAGE
+  newTag: $GITHUB_SHA
+

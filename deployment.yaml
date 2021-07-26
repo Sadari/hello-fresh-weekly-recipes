@@ -1,16 +1,9 @@
-apiVersion: apps/v1
+apiVersion: batch/v1
 kind: Job
 metadata:
   name: cicd-deployment
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      deployment: hello
-  template:
-    metadata:
-      labels:
-        deployment: hello
+  template:      
     spec:
       containers:
       - name: hello-world

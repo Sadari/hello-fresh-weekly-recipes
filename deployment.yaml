@@ -8,4 +8,6 @@ spec:
       containers:
       - name: hello-world
         image: gcr.io/omega-research-321011/hello-world
+      restartPolicy: Never
+  backoffLimit: 4
         

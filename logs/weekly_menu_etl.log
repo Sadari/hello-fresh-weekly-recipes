@@ -1,0 +1,415 @@
+DEBUG:airflow.settings:Disposing DB connection pool (PID 12423)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): 0ba18fdb-155c-43c3-89ff-7f47a697b72d.mock.pstmn.io:443
+DEBUG:urllib3.connectionpool:https://0ba18fdb-155c-43c3-89ff-7f47a697b72d.mock.pstmn.io:443 "GET /2021-W30 HTTP/1.1" 200 None
+INFO:root:Weekly menu retieved.
+INFO:root:26 recipes found
+INFO:root:recipes exported to csv.
+INFO:root:top 10 recipes exported to csv.
+INFO:airflow.providers.amazon.aws.hooks.s3.S3Hook:Airflow Connection: aws_conn_id=aws_default
+WARNING:airflow.models.crypto:empty cryptography key - values will not be stored encrypted.
+INFO:airflow.providers.amazon.aws.hooks.base_aws._SessionFactory:Credentials retrieved from login
+INFO:airflow.providers.amazon.aws.hooks.base_aws._SessionFactory:Creating session with aws_access_key_id=AKIAYQG7Q63FYSCEUPLP region_name=None
+DEBUG:botocore.hooks:Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+DEBUG:botocore.hooks:Changing event name from before-call.apigateway to before-call.api-gateway
+DEBUG:botocore.hooks:Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+DEBUG:botocore.hooks:Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+DEBUG:botocore.hooks:Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+INFO:airflow.providers.amazon.aws.hooks.base_aws._SessionFactory:role_arn is None
+DEBUG:botocore.loaders:Loading JSON file: /opt/anaconda3/lib/python3.8/site-packages/botocore/data/endpoints.json
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7fb97d959dc0>
+DEBUG:botocore.loaders:Loading JSON file: /opt/anaconda3/lib/python3.8/site-packages/botocore/data/s3/2006-03-01/service-2.json
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7fb97d90c820>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7fb977dba160>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7fb97d90c5e0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.loaders:Loading JSON file: /opt/anaconda3/lib/python3.8/site-packages/botocore/data/_retry.json
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fb97ec5a280>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fb97ec5a280>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fb97ec5a280>}) with kwargs {'client': <botocore.client.S3 object at 0x7fb97ec19490>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7fb97e3c93d0>, 'osutil': <s3transfer.utils.OSUtils object at 0x7fb97e5b9730>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7fb97ec515b0>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fb97ec5a280>}
+DEBUG:s3transfer.futures:Submitting task PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7fb97ec515b0> for transfer request: 0.
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}) about to wait for the following futures []
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x7fb97ec19490>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7fb97ec5a8e0>, 'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7fb97d97a4c0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7fb97d9758b0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7fb97d97adc0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7fb97d975820>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7fb97ec51220>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7fb97ec512e0>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7fb97d975670>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function conditionally_calculate_md5 at 0x7fb97d7faee0>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7fb97d975b80>
+DEBUG:botocore.handlers:Adding expect 100 continue header to request.
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7fb97ec51220>>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7fb97d97aee0>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=PutObject) with params: {'url_path': '/hello-fresh-weekly-recipes/2021_30_menu.csv', 'query_string': {}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': 'L4b8U/jCpPnh2lBy8x+nAw==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x7fb97ec5a8e0>, 'url': 'https://s3.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fb97ec19790>, 'has_streaming_input': True, 'auth_type': None, 'signing': {'bucket': 'hello-fresh-weekly-recipes'}}}
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7fb97da5e820>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fb97ec194c0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7fb97e5985e0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7fb97d975550>
+DEBUG:botocore.hooks:Event before-sign.s3.PutObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7fb97ec51370>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv
+DEBUG:botocore.utils:URI updated to: https://hello-fresh-weekly-recipes.s3.amazonaws.com/2021_30_menu.csv
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/2021_30_menu.csv
+
+content-md5:L4b8U/jCpPnh2lBy8x+nAw==
+host:hello-fresh-weekly-recipes.s3.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20210727T063342Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210727T063342Z
+20210727/us-east-1/s3/aws4_request
+13e429c1de11cb347817b2e0f2fa220bcaaf203a1a83662357b6c5114053a55c
+DEBUG:botocore.auth:Signature:
+ee7eacfdad1cd8fdd75ce17aee048f4ff85ea0c5cc787f85829a19b98ef8f29e
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7fb97da5e8b0>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://hello-fresh-weekly-recipes.s3.amazonaws.com/2021_30_menu.csv, headers={'User-Agent': b'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': b'L4b8U/jCpPnh2lBy8x+nAw==', 'Expect': b'100-continue', 'X-Amz-Date': b'20210727T063342Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAYQG7Q63FYSCEUPLP/20210727/us-east-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=ee7eacfdad1cd8fdd75ce17aee048f4ff85ea0c5cc787f85829a19b98ef8f29e', 'Content-Length': '3352'}>
+DEBUG:botocore.httpsession:Certificate path: /opt/anaconda3/lib/python3.8/site-packages/certifi/cacert.pem
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): hello-fresh-weekly-recipes.s3.amazonaws.com:443
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.awsrequest:Received a non 100 Continue response from the server, NOT sending request body.
+DEBUG:urllib3.connectionpool:https://hello-fresh-weekly-recipes.s3.amazonaws.com:443 "PUT /2021_30_menu.csv HTTP/1.1" 400 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-request-id': 'PD1K21ZHNNMXA9YF', 'x-amz-id-2': 'oXpXMNfXvn6UnpWi/VMcy26HYFugmOi2VM5LgPOKS7InqOb5OfLHsAqkBXXsYnsc7FHbWO48+aQ=', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 27 Jul 2021 06:33:42 GMT', 'Server': 'AmazonS3', 'Connection': 'close'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<Error><Code>AuthorizationHeaderMalformed</Code><Message>The authorization header is malformed; the region \'us-east-1\' is wrong; expecting \'ap-southeast-2\'</Message><Region>ap-southeast-2</Region><RequestId>PD1K21ZHNNMXA9YF</RequestId><HostId>oXpXMNfXvn6UnpWi/VMcy26HYFugmOi2VM5LgPOKS7InqOb5OfLHsAqkBXXsYnsc7FHbWO48+aQ=</HostId></Error>'
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7fb97ec511c0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7fb97ec51220>>
+DEBUG:botocore.utils:S3 client configured for region us-east-1 but the bucket hello-fresh-weekly-recipes is in region ap-southeast-2; Please configure the proper region to avoid multiple unnecessary redirects and signing attempts.
+DEBUG:botocore.utils:Updating URI from https://s3.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv to https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv
+DEBUG:botocore.endpoint:Response received to retry, sleeping for 0 seconds
+DEBUG:botocore.awsrequest:Rewinding stream: <s3transfer.utils.ReadFileChunk object at 0x7fb97ec5a8e0>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7fb97da5e820>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fb97ec194c0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7fb97e5985e0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7fb97d975550>
+DEBUG:botocore.hooks:Event before-sign.s3.PutObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7fb97ec51370>>
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv
+DEBUG:botocore.utils:URI updated to: https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com/2021_30_menu.csv
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/2021_30_menu.csv
+
+content-md5:L4b8U/jCpPnh2lBy8x+nAw==
+host:hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20210727T063342Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210727T063342Z
+20210727/ap-southeast-2/s3/aws4_request
+280179af0fef8085a2df9918abbde9e5550912b5aa7a517cb893acaa01266cad
+DEBUG:botocore.auth:Signature:
+0871f8fa2157f01f23c928c941ca90beceb18c4dde923272eb5b3b7547fe83e3
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7fb97da5e8b0>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com/2021_30_menu.csv, headers={'User-Agent': b'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': b'L4b8U/jCpPnh2lBy8x+nAw==', 'Expect': b'100-continue', 'X-Amz-Date': b'20210727T063342Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAYQG7Q63FYSCEUPLP/20210727/ap-southeast-2/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=0871f8fa2157f01f23c928c941ca90beceb18c4dde923272eb5b3b7547fe83e3', 'Content-Length': '3352'}>
+DEBUG:botocore.httpsession:Certificate path: /opt/anaconda3/lib/python3.8/site-packages/certifi/cacert.pem
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com:443
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.awsrequest:100 Continue response seen, now sending request body.
+DEBUG:urllib3.connectionpool:https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com:443 "PUT /2021_30_menu.csv HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': '8YT66Lq7M029QY6UgGPmoMlsRXSyNSDoCo8UL9hYjF+4ziKkw7VUF9xwkliQNj/xFFuDpCugZX4=', 'x-amz-request-id': 'PD1ZYP1EJKY1NB1R', 'Date': 'Tue, 27 Jul 2021 06:33:43 GMT', 'ETag': '"2f86fc53f8c2a4f9e1da5072f31fa703"', 'Server': 'AmazonS3', 'Content-Length': '0'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7fb97ec511c0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7fb97ec51220>>
+DEBUG:botocore.utils:S3 request was previously redirected, not redirecting.
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fb97ec5abe0>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fb97ec5abe0>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fb97ec5abe0>}) with kwargs {'client': <botocore.client.S3 object at 0x7fb97ec19490>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7fb97e3c93d0>, 'osutil': <s3transfer.utils.OSUtils object at 0x7fb97e5b97c0>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7fb97ec51c70>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fb97ec5abe0>}
+DEBUG:s3transfer.futures:Submitting task PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7fb97ec51c70> for transfer request: 0.
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x7fb97ec19490>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7fb97ec70580>, 'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7fb97d97a4c0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7fb97d9758b0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7fb97d97adc0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7fb97d975820>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7fb97ec51220>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7fb97ec512e0>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7fb97d975670>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function conditionally_calculate_md5 at 0x7fb97d7faee0>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7fb97d975b80>
+DEBUG:botocore.handlers:Adding expect 100 continue header to request.
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7fb97ec51220>>
+DEBUG:botocore.utils:Updating URI from https://s3.amazonaws.com/hello-fresh-weekly-recipes/2021_30_TOP_10.csv to https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_TOP_10.csv
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7fb97d97aee0>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=PutObject) with params: {'url_path': '/hello-fresh-weekly-recipes/2021_30_TOP_10.csv', 'query_string': {}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': 'u9A+dIyFGzvCBvXN9K0ezw==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x7fb97ec70580>, 'url': 'https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_TOP_10.csv', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fb97ec19790>, 'has_streaming_input': True, 'auth_type': None, 'signing': {'region': 'ap-southeast-2', 'bucket': 'hello-fresh-weekly-recipes', 'endpoint': 'https://s3.ap-southeast-2.amazonaws.com'}}}
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7fb97da5e820>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fb97ec194c0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7fb97e5985e0>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7fb97d975550>
+DEBUG:botocore.hooks:Event before-sign.s3.PutObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7fb97ec51370>>
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_TOP_10.csv
+DEBUG:botocore.utils:URI updated to: https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com/2021_30_TOP_10.csv
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/2021_30_TOP_10.csv
+
+content-md5:u9A+dIyFGzvCBvXN9K0ezw==
+host:hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20210727T063342Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210727T063342Z
+20210727/ap-southeast-2/s3/aws4_request
+e0164c35f57c53a9b6af05422ade291d6fb3c374dd8898840a38f4680f397dde
+DEBUG:botocore.auth:Signature:
+cdabc5e899f00250046347e71530cb419b49fdb6c4c73c2cf088aec0cdf3ece9
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7fb97da5e8b0>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com/2021_30_TOP_10.csv, headers={'User-Agent': b'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': b'u9A+dIyFGzvCBvXN9K0ezw==', 'Expect': b'100-continue', 'X-Amz-Date': b'20210727T063342Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAYQG7Q63FYSCEUPLP/20210727/ap-southeast-2/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=cdabc5e899f00250046347e71530cb419b49fdb6c4c73c2cf088aec0cdf3ece9', 'Content-Length': '1311'}>
+DEBUG:botocore.httpsession:Certificate path: /opt/anaconda3/lib/python3.8/site-packages/certifi/cacert.pem
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.awsrequest:100 Continue response seen, now sending request body.
+DEBUG:urllib3.connectionpool:https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com:443 "PUT /2021_30_TOP_10.csv HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'E/qoYTrw4SlxOm7w9bF3+43hVON4eetDrRfAI+NwAlaZoPLE/wKglqiFdj3SnFKbZW/lwhuX1cs=', 'x-amz-request-id': 'PD1K83DCNB5QBRCV', 'Date': 'Tue, 27 Jul 2021 06:33:43 GMT', 'ETag': '"bbd03e748c851b3bc206f5cdf4ad1ecf"', 'Server': 'AmazonS3', 'Content-Length': '0'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7fb97ec511c0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7fb97ec51220>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+INFO:root:recipes uploaded to S3:hello-fresh-weekly-recipes.
+DEBUG:root:This message should go to the log file
+DEBUG:airflow.settings:Disposing DB connection pool (PID 12439)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): 0ba18fdb-155c-43c3-89ff-7f47a697b72d.mock.pstmn.io:443
+DEBUG:urllib3.connectionpool:https://0ba18fdb-155c-43c3-89ff-7f47a697b72d.mock.pstmn.io:443 "GET /2021-W30 HTTP/1.1" 200 None
+INFO:root:Weekly menu retieved.
+INFO:root:26 recipes found
+INFO:root:recipes exported to csv.
+INFO:root:top 10 recipes exported to csv.
+INFO:airflow.providers.amazon.aws.hooks.s3.S3Hook:Airflow Connection: aws_conn_id=aws_default
+WARNING:airflow.models.crypto:empty cryptography key - values will not be stored encrypted.
+INFO:airflow.providers.amazon.aws.hooks.base_aws._SessionFactory:Credentials retrieved from login
+INFO:airflow.providers.amazon.aws.hooks.base_aws._SessionFactory:Creating session with aws_access_key_id=AKIAYQG7Q63FYSCEUPLP region_name=None
+DEBUG:botocore.hooks:Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+DEBUG:botocore.hooks:Changing event name from before-call.apigateway to before-call.api-gateway
+DEBUG:botocore.hooks:Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+DEBUG:botocore.hooks:Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+DEBUG:botocore.hooks:Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+INFO:airflow.providers.amazon.aws.hooks.base_aws._SessionFactory:role_arn is None
+DEBUG:botocore.loaders:Loading JSON file: /opt/anaconda3/lib/python3.8/site-packages/botocore/data/endpoints.json
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7fcf67958d30>
+DEBUG:botocore.loaders:Loading JSON file: /opt/anaconda3/lib/python3.8/site-packages/botocore/data/s3/2006-03-01/service-2.json
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7fcf67909790>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7fcf61eba160>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7fcf67909550>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.loaders:Loading JSON file: /opt/anaconda3/lib/python3.8/site-packages/botocore/data/_retry.json
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fcf68d5a220>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fcf68d5a220>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fcf68d5a220>}) with kwargs {'client': <botocore.client.S3 object at 0x7fcf68d1c430>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7fcf684c9700>, 'osutil': <s3transfer.utils.OSUtils object at 0x7fcf686ba6d0>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7fcf68d53550>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fcf68d5a220>}
+DEBUG:s3transfer.futures:Submitting task PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7fcf68d53550> for transfer request: 0.
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}) about to wait for the following futures []
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x7fcf68d1c430>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7fcf68d5a880>, 'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_menu.csv', 'extra_args': {}}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7fcf6797a430>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7fcf67976820>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7fcf6797ad30>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7fcf67976790>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7fcf68d531c0>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7fcf68d53280>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7fcf679765e0>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function conditionally_calculate_md5 at 0x7fcf677f8e50>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7fcf67976af0>
+DEBUG:botocore.handlers:Adding expect 100 continue header to request.
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7fcf68d531c0>>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7fcf6797ae50>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=PutObject) with params: {'url_path': '/hello-fresh-weekly-recipes/2021_30_menu.csv', 'query_string': {}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': 'L4b8U/jCpPnh2lBy8x+nAw==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x7fcf68d5a880>, 'url': 'https://s3.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fcf68d1c730>, 'has_streaming_input': True, 'auth_type': None, 'signing': {'bucket': 'hello-fresh-weekly-recipes'}}}
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7fcf67a5e790>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fcf68d1c460>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7fcf68698580>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7fcf679764c0>
+DEBUG:botocore.hooks:Event before-sign.s3.PutObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7fcf68d53310>>
+DEBUG:botocore.utils:Defaulting to S3 virtual host style addressing with path style addressing fallback.
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv
+DEBUG:botocore.utils:URI updated to: https://hello-fresh-weekly-recipes.s3.amazonaws.com/2021_30_menu.csv
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/2021_30_menu.csv
+
+content-md5:L4b8U/jCpPnh2lBy8x+nAw==
+host:hello-fresh-weekly-recipes.s3.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20210727T065402Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210727T065402Z
+20210727/us-east-1/s3/aws4_request
+6fed8d91bf344600f0b6d4e3fa6daeb55ad8648239cdfaebf5980ee642e50aa3
+DEBUG:botocore.auth:Signature:
+dd3bc608fe8bf11ba9ea0293886be017fd95a4da2d64967983de06bcf97262e0
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7fcf67a5e820>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://hello-fresh-weekly-recipes.s3.amazonaws.com/2021_30_menu.csv, headers={'User-Agent': b'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': b'L4b8U/jCpPnh2lBy8x+nAw==', 'Expect': b'100-continue', 'X-Amz-Date': b'20210727T065402Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAYQG7Q63FYSCEUPLP/20210727/us-east-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=dd3bc608fe8bf11ba9ea0293886be017fd95a4da2d64967983de06bcf97262e0', 'Content-Length': '3352'}>
+DEBUG:botocore.httpsession:Certificate path: /opt/anaconda3/lib/python3.8/site-packages/certifi/cacert.pem
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): hello-fresh-weekly-recipes.s3.amazonaws.com:443
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.awsrequest:Received a non 100 Continue response from the server, NOT sending request body.
+DEBUG:urllib3.connectionpool:https://hello-fresh-weekly-recipes.s3.amazonaws.com:443 "PUT /2021_30_menu.csv HTTP/1.1" 400 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-request-id': '1WBQYQW21GPXBTY8', 'x-amz-id-2': 'DUop+J2xdTuUMe63Yy/JwE3OIL5KVeR3KpiPpjkooWfCF86DB9FLcugmbpQMwFxk5OhjzZF/Jb4=', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 27 Jul 2021 06:54:03 GMT', 'Server': 'AmazonS3', 'Connection': 'close'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<Error><Code>AuthorizationHeaderMalformed</Code><Message>The authorization header is malformed; the region \'us-east-1\' is wrong; expecting \'ap-southeast-2\'</Message><Region>ap-southeast-2</Region><RequestId>1WBQYQW21GPXBTY8</RequestId><HostId>DUop+J2xdTuUMe63Yy/JwE3OIL5KVeR3KpiPpjkooWfCF86DB9FLcugmbpQMwFxk5OhjzZF/Jb4=</HostId></Error>'
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7fcf68d53160>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7fcf68d531c0>>
+DEBUG:botocore.utils:S3 client configured for region us-east-1 but the bucket hello-fresh-weekly-recipes is in region ap-southeast-2; Please configure the proper region to avoid multiple unnecessary redirects and signing attempts.
+DEBUG:botocore.utils:Updating URI from https://s3.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv to https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv
+DEBUG:botocore.endpoint:Response received to retry, sleeping for 0 seconds
+DEBUG:botocore.awsrequest:Rewinding stream: <s3transfer.utils.ReadFileChunk object at 0x7fcf68d5a880>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7fcf67a5e790>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fcf68d1c460>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7fcf68698580>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7fcf679764c0>
+DEBUG:botocore.hooks:Event before-sign.s3.PutObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7fcf68d53310>>
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_menu.csv
+DEBUG:botocore.utils:URI updated to: https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com/2021_30_menu.csv
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/2021_30_menu.csv
+
+content-md5:L4b8U/jCpPnh2lBy8x+nAw==
+host:hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20210727T065402Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210727T065402Z
+20210727/ap-southeast-2/s3/aws4_request
+bbd9fbe61b3a935e6665bc4e39756b4b4a59e5c03f0794a1f742a2a320d2b937
+DEBUG:botocore.auth:Signature:
+53855a2432b3c33adcd0482afe577e78dc820146b03611406c8c496e95d9ecdb
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7fcf67a5e820>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com/2021_30_menu.csv, headers={'User-Agent': b'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': b'L4b8U/jCpPnh2lBy8x+nAw==', 'Expect': b'100-continue', 'X-Amz-Date': b'20210727T065402Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAYQG7Q63FYSCEUPLP/20210727/ap-southeast-2/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=53855a2432b3c33adcd0482afe577e78dc820146b03611406c8c496e95d9ecdb', 'Content-Length': '3352'}>
+DEBUG:botocore.httpsession:Certificate path: /opt/anaconda3/lib/python3.8/site-packages/certifi/cacert.pem
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com:443
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.awsrequest:100 Continue response seen, now sending request body.
+DEBUG:urllib3.connectionpool:https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com:443 "PUT /2021_30_menu.csv HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'Vy8d2nx3YTBkaoO8CoRirbmMyYPP6dpP78yLZgwJct04adPjrl+rsZOS1njwtiz96wOoVw5AN4Q=', 'x-amz-request-id': '7TC3JRFRDB6A3T29', 'Date': 'Tue, 27 Jul 2021 06:54:06 GMT', 'ETag': '"2f86fc53f8c2a4f9e1da5072f31fa703"', 'Server': 'AmazonS3', 'Content-Length': '0'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7fcf68d53160>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7fcf68d531c0>>
+DEBUG:botocore.utils:S3 request was previously redirected, not redirecting.
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fcf68d5ab80>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fcf68d5ab80>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fcf68d5ab80>}) with kwargs {'client': <botocore.client.S3 object at 0x7fcf68d1c430>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7fcf684c9700>, 'osutil': <s3transfer.utils.OSUtils object at 0x7fcf686ba760>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7fcf68d53c10>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7fcf68d5ab80>}
+DEBUG:s3transfer.futures:Submitting task PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7fcf68d53c10> for transfer request: 0.
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}) about to wait for the following futures []
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:s3transfer.tasks:PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task PutObjectTask(transfer_id=0, {'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x7fcf68d1c430>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7fcf68d726a0>, 'bucket': 'hello-fresh-weekly-recipes', 'key': '2021_30_TOP_10.csv', 'extra_args': {}}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7fcf6797a430>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7fcf67976820>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7fcf6797ad30>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7fcf67976790>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x7fcf68d531c0>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x7fcf68d53280>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7fcf679765e0>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function conditionally_calculate_md5 at 0x7fcf677f8e50>
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7fcf67976af0>
+DEBUG:botocore.handlers:Adding expect 100 continue header to request.
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x7fcf68d531c0>>
+DEBUG:botocore.utils:Updating URI from https://s3.amazonaws.com/hello-fresh-weekly-recipes/2021_30_TOP_10.csv to https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_TOP_10.csv
+DEBUG:botocore.hooks:Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7fcf6797ae50>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=PutObject) with params: {'url_path': '/hello-fresh-weekly-recipes/2021_30_TOP_10.csv', 'query_string': {}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': 'u9A+dIyFGzvCBvXN9K0ezw==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x7fcf68d726a0>, 'url': 'https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_TOP_10.csv', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fcf68d1c730>, 'has_streaming_input': True, 'auth_type': None, 'signing': {'region': 'ap-southeast-2', 'bucket': 'hello-fresh-weekly-recipes', 'endpoint': 'https://s3.ap-southeast-2.amazonaws.com'}}}
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7fcf67a5e790>
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fcf68d1c460>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7fcf68698580>>
+DEBUG:botocore.hooks:Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7fcf679764c0>
+DEBUG:botocore.hooks:Event before-sign.s3.PutObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x7fcf68d53310>>
+DEBUG:botocore.utils:Checking for DNS compatible bucket for: https://s3.ap-southeast-2.amazonaws.com/hello-fresh-weekly-recipes/2021_30_TOP_10.csv
+DEBUG:botocore.utils:URI updated to: https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com/2021_30_TOP_10.csv
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/2021_30_TOP_10.csv
+
+content-md5:u9A+dIyFGzvCBvXN9K0ezw==
+host:hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20210727T065402Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20210727T065402Z
+20210727/ap-southeast-2/s3/aws4_request
+18a3a004c4cda5e3eba536f43b4f902e3387822bf58397d2b3f6b03ba2084cec
+DEBUG:botocore.auth:Signature:
+a7ac3c28d186ee0b6ceeb38a3aa37e14aa3d3d404365bf130d6c735e2015f7bc
+DEBUG:botocore.hooks:Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7fcf67a5e820>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com/2021_30_TOP_10.csv, headers={'User-Agent': b'Boto3/1.17.112 Python/3.8.8 Darwin/20.6.0 Botocore/1.20.112', 'Content-MD5': b'u9A+dIyFGzvCBvXN9K0ezw==', 'Expect': b'100-continue', 'X-Amz-Date': b'20210727T065402Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAYQG7Q63FYSCEUPLP/20210727/ap-southeast-2/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=a7ac3c28d186ee0b6ceeb38a3aa37e14aa3d3d404365bf130d6c735e2015f7bc', 'Content-Length': '1311'}>
+DEBUG:botocore.httpsession:Certificate path: /opt/anaconda3/lib/python3.8/site-packages/certifi/cacert.pem
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.awsrequest:100 Continue response seen, now sending request body.
+DEBUG:urllib3.connectionpool:https://hello-fresh-weekly-recipes.s3.ap-southeast-2.amazonaws.com:443 "PUT /2021_30_TOP_10.csv HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'IiWyjyJUHjQmQPYI+VGpOvkdO0FzQy9u/tlYrmayVY37FspXG4imgDnL16thmvBy113T6K6Ki/8=', 'x-amz-request-id': '7TCC7XWBPRQCQ3X6', 'Date': 'Tue, 27 Jul 2021 06:54:06 GMT', 'ETag': '"bbd03e748c851b3bc206f5cdf4ad1ecf"', 'Server': 'AmazonS3', 'Content-Length': '0'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7fcf68d53160>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x7fcf68d531c0>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+INFO:root:recipes uploaded to S3:hello-fresh-weekly-recipes.
+DEBUG:airflow.settings:Disposing DB connection pool (PID 12702)
+DEBUG:airflow.settings:Disposing DB connection pool (PID 12832)
+DEBUG:airflow.settings:Disposing DB connection pool (PID 12837)
+DEBUG:airflow.settings:Disposing DB connection pool (PID 12922)
+DEBUG:airflow.settings:Disposing DB connection pool (PID 18724)
+DEBUG:airflow.settings:Disposing DB connection pool (PID 18762)

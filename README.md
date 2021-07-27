@@ -1,4 +1,4 @@
-# E2E Data pipeline
+# E2E Data Pipeline
 
 This repository contains Apache Airflow pipeline for ETL and CI/CD pipeline to deploy docker image to Kubernetes cluster
 
@@ -14,9 +14,11 @@ To configure this pipeline
 - ensure that config.ini has the necessary configurations for the scheduler 
 - install docker in your local environment
 - steps to run locally:
--- build: docker build --rm -t hello-fresh/docker-airflow .
--- run: docker run -d -p 8080:8080 hello-fresh/docker-airflow webserver
--- to load DAGs examples: docker run -d -p 8080:8080 -e LOAD_EX=y hello-fresh/docker-airflow
+	build: docker build --rm -t hello-fresh/docker-airflow .
+	run: docker run -d -p 8080:8080 hello-fresh/docker-airflow webserver
+	to load DAGs examples: docker run -d -p 8080:8080 -e LOAD_EX=y hello-fresh/docker-airflow
+
+Tests for ETL pipeline can be found in test folder. 
 
 
 ## CI/CD pipeline

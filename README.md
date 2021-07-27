@@ -14,9 +14,9 @@ To configure this pipeline
 - ensure that config.ini has the necessary configurations for the scheduler 
 - install docker in your local environment
 - steps to run locally:
-	build: docker build --rm -t hello-fresh/docker-airflow .
-	run: docker run -d -p 8080:8080 hello-fresh/docker-airflow webserver
-	to load DAGs examples: docker run -d -p 8080:8080 -e LOAD_EX=y hello-fresh/docker-airflow
+	- build: docker build --rm -t hello-fresh/docker-airflow .
+	- run: docker run -d -p 8080:8080 hello-fresh/docker-airflow webserver
+	- to load DAGs examples: docker run -d -p 8080:8080 -e LOAD_EX=y hello-fresh/docker-airflow
 
 Tests for ETL pipeline can be found in test folder. 
 

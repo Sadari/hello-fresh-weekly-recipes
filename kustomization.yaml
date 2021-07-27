@@ -7,6 +7,6 @@ commonLabels:
   app: hello-world
 
 resources:
-- deployment.yaml
+- job.yaml
 
 

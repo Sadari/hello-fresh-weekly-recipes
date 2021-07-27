@@ -7,6 +7,6 @@ commonLabels:
   app: hello-fresh
 
 resources:
-- deployment.yaml
+- job.yaml
 
 

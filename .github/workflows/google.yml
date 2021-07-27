@@ -22,7 +22,7 @@ env:
   GKE_CLUSTER: cicd-cluster    # TODO: update to cluster name
   GKE_ZONE: australia-southeast1-a   # TODO: update to cluster zone
   DEPLOYMENT_NAME: cicd-deployment # TODO: update to deployment name
-  IMAGE: hello-world
+  IMAGE: hello-fresh
 
 jobs:
   setup-build-publish-deploy:

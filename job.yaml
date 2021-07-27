@@ -6,8 +6,8 @@ spec:
   template:      
     spec:
       containers:
-      - name: hello-world
-        image: gcr.io/omega-research-321011/hello-world
+      - name: hello-fresh
+        image: gcr.io/omega-research-321011/hello-fresh
       restartPolicy: Never
   backoffLimit: 4
         

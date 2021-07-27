@@ -75,6 +75,6 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        ./kustomize edit set image hello-world=gcr.io/$PROJECT_ID/$IMAGE
+        ./kustomize edit set image hello-fresh=gcr.io/$PROJECT_ID/$IMAGE
         ./kustomize build . | kubectl apply -f -
         
